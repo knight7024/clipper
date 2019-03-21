@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <div class="columns">
+        <div class="column col-auto col-mx-auto">
+            <div class="form-group" style="display: flex">
+                <!-- basic dropdown button -->
+                <div id="dropdown-search" class="dropdown">
+                    <a role="button" class="btn dropdown-toggle" tabindex="0">
+                        검색 설정 <i class="icon icon-caret"></i>
+                    </a>
+                    <!-- menu component -->
+                    <ul class="menu">
+                        <li class="menu-item"><a role="button" class="c-hand search-type" data-search-type="0">채널명</a>
+                        </li>
+                        <li class="menu-item"><a role="button" class="c-hand search-type" data-search-type="1">게임명</a>
+                        </li>
+                    </ul>
+                </div>
+                <form id="form-search" action="{% url 'search' %}" method="GET">
+                    <input class="form-input" id="input-search" type="text" name="keyword" placeholder="검색어를 입력하세요." style="width: 350px;">
+                    <input type="hidden" id="type-result" name="type" value="-1">
+                </form>
+            </div>
+        </div>
+    </div>
+    <br><br>
+</section>
+<!-- Waiting... -->
+</div>
+
+{% endblock %}

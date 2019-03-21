@@ -1,0 +1,70 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Spectre CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/venobox.css' %}" />
+
+    <title>Hello, world!</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'assets/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static 'assets/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="Clipper">
+    <meta name="application-name" content="Clipper">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <!-- Spectre Navbar-->
+    <header class="navbar">
+        <div class="container grid-xl">
+            <section class="navbar-section">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    <img class="clipper-logo" alt="logo" src="{% static 'assets/clipper-inverse-512.png' %}" width='50'><span
+                        class="clipper-logo-txt align-text-top text-uppercase">clipper</span>
+                </a>
+                <!-- <div class="input-group input-inline" style="margin-left: 15px;">
+                    <input class="form-input" type="text" placeholder="Search Clips">
+                    <button class="btn input-group-btn">Search</button>
+                </div> -->
+            </section>
+            <section class="navbar-section">
+
+            </section>
+        </div>
+    </header>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/venobox.min.js' %}"></script>
+</body>
+
+</html>

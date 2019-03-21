@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container grid-xl">
+    <section>
+        <h4>검색된 클립들</h4>
+        <div class="divider"></div>
+    </section> 
+    <section>
+        <div class="columns">
+                <!-- iteration Start -->
+                {% for i in result %}
+                <a class="venobox clpr-link column col-3 col-md-6 col-xs-12" data-vbtype="iframe" href="{{ i.embed_url }}">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="img-responsive img-thumbnail"
+                                src="{{ i.thumbnails.small }}"
+                                alt="clip thumbnail">
+                            <span class="black-square-date text-light">{{ i.created_at }}</span>
+                            <span class="black-square-duration text-light">{{ i.duration }}초</span>
+                        </div>
+                        <div class="card-header">
+                            <div class="card-title h6">{{ i.title }}</div>
+                            <div class="clip-info">
+                                <div class="card-subtitle text-gray">{{ i.broadcaster.display_name }}</div>
+                                <div class="card-subtitle text-gray">클립 제작: {{ i.curator.display_name }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+                <!-- iteration End -->
+        </div>
+</div>
+</section>
+
+{% endblock %}
